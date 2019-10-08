@@ -10,7 +10,7 @@ const vampire = {
 const werewolf = {
     id: 'Werewolf',
     name: 'Remus Lupin',
-    image: 'Remus-lupi-square.jpg',
+    image: 'Remus-lupin-square.jpg',
     description: 'Changes into a wolf on the full moon',
     category: 'Creatures that will kill you',
     price: 700,
@@ -19,7 +19,7 @@ const werewolf = {
 const unicorn = {
     id: 'Unicorn',
     name: 'The Last Unicorn',
-    image: 'last-unicorn-suqare.jpg',
+    image: 'last-unicorn-square.jpg',
     description: 'Looks like a horse, but also has a horn',
     category: 'Beautiful endangered species',
     price: 3000,
@@ -37,7 +37,7 @@ const dwarf = {
 const sasquatch = {
     id: 'Sasquatch',
     name: 'Bigfoot',
-    image: 'bigfoot-square.jpg',
+    image: 'bigfoot-squarejpg.jpg',
     description: 'Large and hair',
     category: 'Creatures that will can never find',
     price: 10000,
