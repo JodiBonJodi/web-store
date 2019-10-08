@@ -67,6 +67,7 @@ li {
 #creatures li:hover {
     border: 1px solid lightgrey;
     background-color: #46693a;
+    box-shadow: 2px 2px lightgrey; 
     
 }
 

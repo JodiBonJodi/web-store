@@ -39,5 +39,3 @@ function renderCreatures(creature) {
 }
 
 export default renderCreatures;
-
-

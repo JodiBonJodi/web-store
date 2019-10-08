@@ -1,0 +1,16 @@
+
+
+table {
+    width: 500px;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    border: dotted 1px blue;
+}
+
+th {
+    text-align: center;
+    border: dotted 1px blue;
+}
