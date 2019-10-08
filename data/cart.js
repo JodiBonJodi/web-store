@@ -1,15 +1,18 @@
 const cart = [{
-    id: 'apple',
+    id: 'Vampire',
+    quantity: 3
+}, {
+    id: 'Werewolf',
+    quantity: 4
+}, {
+    id: 'Unicorn',
     quantity: 2
 }, {
-    id: 'banana',
-    quantity: 5
+    id: 'Dwarf',
+    quantity: 7
 }, {
-    id: 'mango',
+    id: 'Sasquatch',
     quantity: 1
-}, {
-    id: 'orange',
-    quantity: 10
 }];
 
 export default cart;
