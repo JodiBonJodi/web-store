@@ -26,13 +26,16 @@ function renderCreatures(creature) {
     //     style: 'currency', 
     //     currency: 'USD' 
     p.textContent = usd;
+
+    captionDiv.appendChild(p);
     
     const button = document.createElement('button');
+    button.className = 'buy-me';
     button.textContent = 'Add';
     button.value = creature.id;
     p.appendChild(button);
 
-    captionDiv.appendChild(p);
+    captionDiv.appendChild(button);
 
     return li;
 }
