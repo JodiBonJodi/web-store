@@ -22,9 +22,7 @@ function renderCreatures(creature) {
     p.className = 'price';
 
     const usd = '$' + creature.price.toFixed(2);
-    // const usd = creature.price.toLocaleString('en-US', { 
-    //     style: 'currency', 
-    //     currency: 'USD' 
+ 
     p.textContent = usd;
 
     captionDiv.appendChild(p);
