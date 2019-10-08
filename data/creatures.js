@@ -1,5 +1,5 @@
 const vampire = {
-    id: 'vampire',
+    id: 'Vampire',
     name: 'Louis de Pointe du Lac',
     image: 'louis-square.jpg',
     description: 'Will suck your blood for food and fun.',
@@ -8,7 +8,7 @@ const vampire = {
 };
 
 const werewolf = {
-    id: 'werewolf',
+    id: 'Werewolf',
     name: 'Remus Lupin',
     image: 'Remus-lupi-square.jpg',
     description: 'Changes into a wolf on the full moon',
@@ -17,7 +17,7 @@ const werewolf = {
 };
 
 const unicorn = {
-    id: 'unicorn',
+    id: 'Unicorn',
     name: 'The Last Unicorn',
     image: 'last-unicorn-suqare.jpg',
     description: 'Looks like a horse, but also has a horn',
@@ -26,7 +26,7 @@ const unicorn = {
 };
 
 const dwarf = {
-    id: 'dwarf',
+    id: 'Dwarf',
     name: 'Gimli',
     image: 'gimli-square.jpeg',
     description: 'Works hard and has a great beard',
@@ -35,7 +35,7 @@ const dwarf = {
 };
 
 const sasquatch = {
-    id: 'sasquatch',
+    id: 'Sasquatch',
     name: 'Bigfoot',
     image: 'bigfoot-square.jpg',
     description: 'Large and hair',

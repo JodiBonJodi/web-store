@@ -11,4 +11,3 @@ for (let i = 0; i < creatures.length; i++) {
     const creatureListElement = renderCreatures(creature);
     list.appendChild(creatureListElement);
 }
-console.log(creatures);
