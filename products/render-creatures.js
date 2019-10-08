@@ -10,9 +10,13 @@ function renderCreatures(creature) {
     img.alt = creature.id + ' image';
     li.appendChild(img);
 
+    const captionDiv = document.createElement('div');
+    captionDiv.className = 'caption';
+    li.appendChild(captionDiv); 
+
     const h3 = document.createElement('h3');
     h3.textContent = creature.name;
-    li.appendChild(h3);
+    captionDiv.appendChild(h3);
 
     const p = document.createElement('p');
     p.className = 'price';
@@ -25,10 +29,10 @@ function renderCreatures(creature) {
     
     const button = document.createElement('button');
     button.textContent = 'Add';
-    button.value = creature.code;
+    button.value = creature.id;
     p.appendChild(button);
 
-    li.appendChild(p);
+    captionDiv.appendChild(p);
 
     return li;
 }
