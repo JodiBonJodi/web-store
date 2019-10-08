@@ -17,7 +17,7 @@ test('time to test a function', function(assert) {
         price: 1500,
     };
 
-    const expected = '<li class="Creatures that will kill you" title="Will suck your blood for food and fun."><img src="../assets/louis-square.jpg" alt="Vampire image"><div class="caption"><h3>Louis de Pointe du Lac</h3><p class="price">$1500.00<button value="Vampire">Add</button></p></div></li>';
+    const expected = '<li class="Creatures that will kill you" title="Will suck your blood for food and fun."><img src="../assets/louis-square.jpg" alt="Vampire image"><div class="caption"><h3>Louis de Pointe du Lac</h3><p class="price">$1500.00</p><button class="buy-me" value="Vampire">Add</button></div></li>';
     //Act 
     // Call the function you're testing and set the result to a const
     const creatureTime = renderCreatures(vampire);

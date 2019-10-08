@@ -1,4 +1,5 @@
 body {
+    
     background-image: url("../../assets/background.jpg");
     color: white;
     display: flex;
@@ -6,7 +7,7 @@ body {
     flex-direction: column;
     font-family: 'Smythe', cursive;
     background-attachment: fixed;
-
+    
 }
 
 header {
@@ -50,13 +51,27 @@ li {
     display: flex;
     flex-direction: row;
     align-items: right;
+    transition: all 0.3s ease;
 }
+
+
 
 #creatures li {
     border: 1px solid lightgrey;
     border-radius: 25px;
     margin: 5px;
     padding: 10px;
+    transition: all 0.3s ease;
+}
+
+#creatures li:hover {
+    border: 1px solid lightgrey;
+    background-color: #46693a;
+    
+}
+
+li:hover .buy-me {
+    border: 1px solid lightgrey;
 }
 
 
@@ -74,7 +89,6 @@ button {
     font-size: 30px;
     text-align: center;
     font-family: 'Smythe', cursive;
-    margin-top: 10px;
 
 }
 
