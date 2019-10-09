@@ -1,6 +1,4 @@
 import makePrettyMoney from '../common/utilities.js';
-// import creatures from '../data/creatures.js';
-// import cart from '../data/cart.js';
 
 function renderTableRow (cart, creature) {
    
@@ -25,7 +23,6 @@ function renderTableRow (cart, creature) {
     const total = cart.quantity * creature.price;
     totalData.textContent = makePrettyMoney(total);
     tableRow.appendChild(totalData);
-
 
     return tableRow;
 }

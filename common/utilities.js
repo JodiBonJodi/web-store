@@ -1,12 +1,10 @@
-// import creatures from '../data/creatures.js';
-
 const makePrettyMoney = (number) => {
     return number.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 };
 
 export default makePrettyMoney;
 
-export const foundById = (items, id) => {
+export function foundById(items, id) {
     for (let i = 0; i < items.length; i++) {
         const item = items[i]; 
         if (item.id === id) {
