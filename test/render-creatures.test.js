@@ -1,6 +1,5 @@
 // IMPORT MODULES under test here:
 import renderCreatures from '../products/render-creatures.js';
-// import renderTableRow from '../shopping-cart/render-table-row.js';
 import { foundById, calcLineItem, calcOrderTotal } from '../common/utilities.js'; 
 import creatures from '../data/creatures.js';
 import renderTableRow from '../shopping-cart/render-table-row.js';
@@ -73,7 +72,6 @@ test3('test finds an item in an array based on its id and checks to see if it ma
     const foundCreature = foundById(creatures, id);
     //Assert
     // Make assertions about what is expected valid result
-    // assert.ok(foundCreature);
     assert.equal(foundCreature.id, expected);
 });
 

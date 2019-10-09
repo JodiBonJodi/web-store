@@ -20,11 +20,20 @@ export function calcLineItem(quantity, price) {
 
 export function calcOrderTotal(cart, creatures) {
     let orderTotal = 0;
-    for (let i = 0; i < cart.length; i++) {
-        const orderItem = cart[i];
+        cart.forEach(orderItem) => {
         const creature = foundById(creatures, orderItem.id);
         const creatureTotal = calcLineItem(orderItem.quantity, creature.price);
         orderTotal = orderTotal + creatureTotal;
-    }
-    return makePrettyMoney(orderTotal);
-}
+    };
+};
+        
+//     });
+
+//     for (let i = 0; i < cart.length; i++) {
+//         const orderItem = cart[i];
+//         const creature = foundById(creatures, orderItem.id);
+//         const creatureTotal = calcLineItem(orderItem.quantity, creature.price);
+//         orderTotal = orderTotal + creatureTotal;
+//     }
+//     return makePrettyMoney(orderTotal);
+// }
