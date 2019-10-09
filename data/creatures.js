@@ -44,4 +44,5 @@ const sasquatch = {
 };
 
 const creatures = [vampire, werewolf, unicorn, dwarf, sasquatch];
+
 export default creatures; 

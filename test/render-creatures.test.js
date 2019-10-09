@@ -1,12 +1,15 @@
 // IMPORT MODULES under test here:
 import renderCreatures from '../products/render-creatures.js';
-import renderTableRow from '../shopping-cart/render-table-row.js'
+// import renderTableRow from '../shopping-cart/render-table-row.js';
+import { foundById, calcLineItem } from '../common/utilities.js'; 
+import creatures from '../data/creatures.js';
+import renderTableRow from "../shopping-cart/render-table-row.js"
 
 // import example from '../src/example.js';
 
 const test = QUnit.test;
 
-test('time to test a function', function(assert) {
+test('test to see if we can render the creatures to the shopping page', function(assert) {
     //Arrange
     // Set up your parameters and expectations
     const vampire = {
@@ -28,9 +31,10 @@ test('time to test a function', function(assert) {
     assert.equal(html, expected);
 });
 
-const test1 = QUnit.test;
 
-test1('test to see if this will render a row in our table', function(assert) {
+const test2 = QUnit.test;
+
+test2('test to see if this will render a row in our table', function(assert) {
     //Arrange
     // Set up your parameters and expectations
     const vampire = {
@@ -44,10 +48,10 @@ test1('test to see if this will render a row in our table', function(assert) {
 
     const vampireOrder = {
         id: 'vampire',
-        quantity: 2,
-    }
+        quantity: 3,
+    };
 
-    const expected = '<tr><td>apple</td><td>4</td><td>1.00</td><td>4.00</td></tr>';
+    const expected = '<tr><td>Louis de Pointe du Lac</td><td>3</td><td>$1,500.00</td><td>$4,500.00</td></tr>';
     //Act 
     // Call the function you're testing and set the result to a const
     const renderedRow = renderTableRow(vampireOrder, vampire);
@@ -55,4 +59,41 @@ test1('test to see if this will render a row in our table', function(assert) {
     //Assert
     // Make assertions about what is expected valid result
     assert.equal(html, expected);
+});
+
+const test3 = QUnit.test;
+
+test3('test finds an item in an array based on its id and checks to see if it matches another specific id ', function(assert) {
+    //Arrange
+    // Set up your parameters and expectations
+    const id = 'Vampire';
+    const expected = 'Vampire';
+
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const foundCreature = foundById(creatures, id);
+    //Assert
+    // Make assertions about what is expected valid result
+    // assert.ok(foundCreature);
+    assert.equal(foundCreature.id, expected);
+});
+
+const test4 = QUnit.test;
+
+
+test4('test finds an item in an array based on its id and checks to see if it matches another specific id ', function(assert) {
+    //Arrange
+    // Set up your parameters and expectations
+    const quantity = 22;
+    const price = 5;
+    const expected = '$110.00';
+
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const lineItemTotal = calcLineItem(quantity, price);
+    //Assert
+    console.log(lineItemTotal);
+    console.log(calcLineItem(quantity, price));
+    // Make assertions about what is expected valid result
+    assert.equal(lineItemTotal, expected);
 });
