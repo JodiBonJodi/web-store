@@ -3,9 +3,7 @@ import makePrettyMoney from '../common/utilities.js';
 function renderTableRow(cart, creature) {
    
     const tableRow = document.createElement('tr'); //makes row
-    
-    // const tableDataElement = document.createElement('td'); //makes cells
-    
+        
 //adding data to the rows
     const nameData = document.createElement('td');
     nameData.textContent = creature.name;
