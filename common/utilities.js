@@ -15,7 +15,7 @@ export function foundById(items, id) {
 
 export function calcLineItem(quantity, price) {
     const lineItemTotal = quantity * price;
-    return makePrettyMoney(lineItemTotal);
+    return lineItemTotal;
 }
 
 export function calcOrderTotal(cart, creatures) {
@@ -24,9 +24,7 @@ export function calcOrderTotal(cart, creatures) {
         const orderItem = cart[i];
         const creature = foundById(creatures, orderItem.id);
         const creatureTotal = calcLineItem(orderItem.quantity, creature.price);
-        console.log(creatureTotal);
         orderTotal = orderTotal + creatureTotal;
-        console.log(orderTotal);
     }
-    return orderTotal;
+    return makePrettyMoney(orderTotal);
 }

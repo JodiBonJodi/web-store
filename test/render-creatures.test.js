@@ -86,7 +86,7 @@ test4('test to see with the expected equals the product of the quantity and the 
     // Set up your parameters and expectations
     const quantity = 22;
     const price = 5;
-    const expected = '$110.00';
+    const expected = 110.00;
 
     //Act 
     // Call the function you're testing and set the result to a const
