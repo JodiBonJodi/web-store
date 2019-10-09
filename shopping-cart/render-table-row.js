@@ -1,6 +1,6 @@
 import makePrettyMoney from '../common/utilities.js';
 
-function renderTableRow (cart, creature) {
+function renderTableRow(cart, creature) {
    
     const tableRow = document.createElement('tr'); //makes row
     

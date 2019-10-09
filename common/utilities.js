@@ -11,7 +11,7 @@ export function foundById(items, id) {
             return item;
         }
     }
-};
+}
 
 export function calcLineItem(quantity, price) {
     const lineItemTotal = quantity * price;

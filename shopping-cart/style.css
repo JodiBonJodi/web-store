@@ -1,16 +1,54 @@
+body {
+    background-image: url("../../assets/darkmistybackground.jpg");
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Smythe', cursive;
+    background-attachment: fixed; 
+    font-size: 30px; 
+}
 
+nav {
+    margin: 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    margin: 10px;
+    color: lightgrey;
+    font-size: 30px;
+}
 
 table {
-    width: 500px;
+    width: 700px;
     text-align: center;
 }
 
 td {
     text-align: center;
-    border: dotted 1px blue;
+    border: 1px dotted lightgrey;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+
+thead {
+    background-color: #46693a;
 }
 
 th {
     text-align: center;
-    border: dotted 1px blue;
+    border: dotted 1px lightgrey;
+}
+
+button {
+    display: flex;
+    font-family: 'Smythe', cursive;
+    font-size: 20px;
+}
+
+.order-total-cell {
+    border-top: 5px solid red;
 }

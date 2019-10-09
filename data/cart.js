@@ -11,6 +11,9 @@ const cart = [{
     id: 'Dwarf',
     quantity: 7
 }, {
+    id: 'Ewok',
+    quantity: 3
+}, {
     id: 'Sasquatch',
     quantity: 1
 }];

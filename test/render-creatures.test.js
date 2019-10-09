@@ -3,9 +3,8 @@ import renderCreatures from '../products/render-creatures.js';
 // import renderTableRow from '../shopping-cart/render-table-row.js';
 import { foundById, calcLineItem, calcOrderTotal } from '../common/utilities.js'; 
 import creatures from '../data/creatures.js';
-import renderTableRow from "../shopping-cart/render-table-row.js"
+import renderTableRow from '../shopping-cart/render-table-row.js';
 import cart from '../data/cart.js';
-// import example from '../src/example.js';
 
 const test = QUnit.test;
 
@@ -102,7 +101,7 @@ const test5 = QUnit.test;
 test5('tests function that calculates total price', function(assert) {
     //Arrange
     // Set up your parameters and expectations
-    const expected = '$47,800.00';
+    const expected = '$130,300.00';
 
     //Act 
     // Call the function you're testing and set the result to a const

@@ -22,7 +22,7 @@ const unicorn = {
     image: 'last-unicorn-square.jpg',
     description: 'Looks like a horse, but also has a horn',
     category: 'Beautiful endangered species',
-    price: 3000,
+    price: 30000,
 };
 
 const dwarf = {
@@ -31,18 +31,27 @@ const dwarf = {
     image: 'gimli-square.jpeg',
     description: 'Works hard and has a great beard',
     category: 'Creatures that will build things',
-    price: 3500,
+    price: 5000,
+};
+
+const ewok = {
+    id: 'Ewok',
+    name: 'Wicket W. Warrick',
+    image: 'ewok-square.jpeg',
+    description: 'Small and hairy',
+    category: 'Lives in the forest and builds things with sticks and rope',
+    price: 6000,
 };
 
 const sasquatch = {
     id: 'Sasquatch',
     name: 'Bigfoot',
     image: 'bigfoot-squarejpg.jpg',
-    description: 'Large and hair',
+    description: 'Large and hairy',
     category: 'Creatures that will can never find',
     price: 10000,
 };
 
-const creatures = [vampire, werewolf, unicorn, dwarf, sasquatch];
+const creatures = [vampire, werewolf, unicorn, dwarf, ewok, sasquatch];
 
 export default creatures; 
