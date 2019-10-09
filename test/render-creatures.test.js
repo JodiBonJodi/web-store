@@ -1,10 +1,10 @@
 // IMPORT MODULES under test here:
 import renderCreatures from '../products/render-creatures.js';
 // import renderTableRow from '../shopping-cart/render-table-row.js';
-import { foundById, calcLineItem } from '../common/utilities.js'; 
+import { foundById, calcLineItem, calcOrderTotal } from '../common/utilities.js'; 
 import creatures from '../data/creatures.js';
 import renderTableRow from "../shopping-cart/render-table-row.js"
-
+import cart from '../data/cart.js';
 // import example from '../src/example.js';
 
 const test = QUnit.test;
@@ -81,7 +81,7 @@ test3('test finds an item in an array based on its id and checks to see if it ma
 const test4 = QUnit.test;
 
 
-test4('test finds an item in an array based on its id and checks to see if it matches another specific id ', function(assert) {
+test4('test to see with the expected equals the product of the quantity and the price', function(assert) {
     //Arrange
     // Set up your parameters and expectations
     const quantity = 22;
@@ -92,8 +92,22 @@ test4('test finds an item in an array based on its id and checks to see if it ma
     // Call the function you're testing and set the result to a const
     const lineItemTotal = calcLineItem(quantity, price);
     //Assert
-    console.log(lineItemTotal);
-    console.log(calcLineItem(quantity, price));
     // Make assertions about what is expected valid result
     assert.equal(lineItemTotal, expected);
+});
+
+const test5 = QUnit.test;
+
+
+test5('tests function that calculates total price', function(assert) {
+    //Arrange
+    // Set up your parameters and expectations
+    const expected = '$47,800.00';
+
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const totalCartPrice = calcOrderTotal(cart, creatures);
+    //Assert
+    // Make assertions about what is expected valid result
+    assert.equal(totalCartPrice, expected);
 });
