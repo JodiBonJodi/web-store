@@ -31,7 +31,6 @@ function renderCreatures(creature) {
     button.className = 'buy-me';
     button.textContent = 'Add';
     button.value = creature.id;
-    p.appendChild(button);
 
     captionDiv.appendChild(button);
 
@@ -39,5 +38,3 @@ function renderCreatures(creature) {
 }
 
 export default renderCreatures;
-
-
