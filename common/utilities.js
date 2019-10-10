@@ -9,8 +9,9 @@ export function foundById(items, id) {
         const item = items[i]; 
         if (item.id === id) {
             return item;
-        }
-    }
+        } 
+    } 
+    return null;
 }
 
 export function calcLineItem(quantity, price) {
@@ -29,3 +30,4 @@ export function calcOrderTotal(cart, creatures) {
     }
     return makePrettyMoney(orderTotal);
 }
+

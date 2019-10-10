@@ -1,6 +1,13 @@
 import { foundById } from '../common/utilities.js';
+// import creatures from '../data/creatures.js';
 
 const CART_KEY = 'CART_KEY';
+let cart = [];
+
+const initializeCart = () => {
+    const serializedOrder = JSON.stringify(cart);
+    localStorage.setItem(CART_KEY, serializedOrder);
+};
 
 function renderCreatures(creature) {
     const li = document.createElement('li');
@@ -35,48 +42,41 @@ function renderCreatures(creature) {
     button.value = creature.id;
     button.addEventListener('click', () => {
 
-        let cart = [];
-        const initializeCart = () => {
-            const serializedOrder = JSON.stringify(cart);
-            localStorage.setItem(CART_KEY, serializedOrder);
-        };
-        
-        initializeCart();
-
-        console.log(cart);
+        console.log(cart, 'cart at the beginning');
 
         let currentLocalCart = localStorage.getItem(CART_KEY); 
+        console.log(currentLocalCart, 'current local cart before anything');
 
         if (!currentLocalCart) {
-            currentLocalCart = [];
+            currentLocalCart = initializeCart();
         } else {
-            currentLocalCart = JSON.stringify(currentLocalCart);
+            currentLocalCart = JSON.parse(currentLocalCart);
         }
-        console.log(currentLocalCart);
+        console.log(currentLocalCart, 'parsed cart before finding id');
 
-        let orderItem = foundById(creature, creature.id);
-       
+        let orderItem = foundById(cart, creature.id);
+        console.log(orderItem, 'order item');
 
         if (orderItem) {
-            orderItem++;
+            orderItem.quantity++;
         } else {
-            orderItem = {
-                id: creature.id,
-                quantity: 1
-            };  
+            if (orderItem === null) {
+                orderItem = {
+                    id: creature.id,
+                    quantity: 1,
+                };  
+                cart.push(orderItem);
+            }
+
         }
+        console.log(orderItem, 'order item after increaese');
+        // return JSON.stringify(cart);
 
-        cart.push(orderItem.quantity);
-
-
-        
-        console.log(orderItem);
         console.log(cart);
-
     });
 
     captionDiv.appendChild(button);
-
+    
     return li;
 }
 
