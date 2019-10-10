@@ -1,13 +1,15 @@
 import { foundById } from '../common/utilities.js';
 // import creatures from '../data/creatures.js';
 
-const CART_KEY = 'CART_KEY';
-let cart = [];
+export const CART_KEY = 'CART_KEY';
+
 
 const initializeCart = () => {
     const serializedOrder = JSON.stringify(cart);
     localStorage.setItem(CART_KEY, serializedOrder);
 };
+
+let cart = [];
 
 function renderCreatures(creature) {
     const li = document.createElement('li');
@@ -42,20 +44,17 @@ function renderCreatures(creature) {
     button.value = creature.id;
     button.addEventListener('click', () => {
 
-        console.log(cart, 'cart at the beginning');
 
         let currentLocalCart = localStorage.getItem(CART_KEY); 
-        console.log(currentLocalCart, 'current local cart before anything');
-
+        
         if (!currentLocalCart) {
             currentLocalCart = initializeCart();
+            currentLocalCart = localStorage.getItem(CART_KEY);
         } else {
-            currentLocalCart = JSON.parse(currentLocalCart);
+            currentLocalCart; /*= JSON.parse(currentLocalCart);*/
         }
-        console.log(currentLocalCart, 'parsed cart before finding id');
 
         let orderItem = foundById(cart, creature.id);
-        console.log(orderItem, 'order item');
 
         if (orderItem) {
             orderItem.quantity++;
@@ -69,10 +68,8 @@ function renderCreatures(creature) {
             }
 
         }
-        console.log(orderItem, 'order item after increaese');
-        // return JSON.stringify(cart);
-
-        console.log(cart);
+        let stringyCreature = JSON.stringify(cart);
+        localStorage.setItem(CART_KEY, stringyCreature);
     });
 
     captionDiv.appendChild(button);
