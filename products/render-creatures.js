@@ -1,4 +1,6 @@
+import { foundById } from '../common/utilities.js';
 
+// const CART_KEY = 'cart';
 
 function renderCreatures(creature) {
     const li = document.createElement('li');
@@ -31,6 +33,33 @@ function renderCreatures(creature) {
     button.className = 'buy-me';
     button.textContent = 'Add';
     button.value = creature.id;
+    button.addEventListener('click', () => {
+        let emptyCart=[];
+        localStorage.setItem('CART-KEY', emptyCart);
+        let currentLocalCart = localStorage.getItem('CART_KEY'); 
+
+        if (!currentLocalCart) {
+            currentLocalCart = [];
+        } else {
+            currentLocalCart = JSON.stringify(currentLocalCart);
+        }
+        console.log(currentLocalCart);
+
+        let orderItem = foundById(creature, creature.id);
+        
+        if (orderItem) {
+            orderItem++;
+        } else {
+            orderItem = {
+                id: creature.id,
+                quantity: 1
+            };  
+        }
+
+    
+
+
+    });
 
     captionDiv.appendChild(button);
 
