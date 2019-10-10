@@ -20,5 +20,13 @@ for (let i = 0; i < parsedCart.length; i++) {
 const totalOrder = document.getElementById('order-total-cell');
 totalOrder.textContent = calcOrderTotal(parsedCart, creatures);
 
+const orderButton = document.querySelector('order-button');
+orderButton.addEventListener('click', () => {
+    if (parsedCart) {
+        alert(JSON.stringify(parsedCart, true,));
+    } else {
+        orderButton.setAttribute('disabled');
+    }
+});
 
 export default parsedCart;
