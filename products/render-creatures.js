@@ -1,6 +1,6 @@
 import { foundById } from '../common/utilities.js';
 
-// const CART_KEY = 'cart';
+const CART_KEY = 'CART_KEY';
 
 function renderCreatures(creature) {
     const li = document.createElement('li');
@@ -34,9 +34,18 @@ function renderCreatures(creature) {
     button.textContent = 'Add';
     button.value = creature.id;
     button.addEventListener('click', () => {
-        let emptyCart=[];
-        localStorage.setItem('CART-KEY', emptyCart);
-        let currentLocalCart = localStorage.getItem('CART_KEY'); 
+
+        let cart = [];
+        const initializeCart = () => {
+            const serializedOrder = JSON.stringify(cart);
+            localStorage.setItem(CART_KEY, serializedOrder);
+        };
+        
+        initializeCart();
+
+        console.log(cart);
+
+        let currentLocalCart = localStorage.getItem(CART_KEY); 
 
         if (!currentLocalCart) {
             currentLocalCart = [];
@@ -46,7 +55,8 @@ function renderCreatures(creature) {
         console.log(currentLocalCart);
 
         let orderItem = foundById(creature, creature.id);
-        
+       
+
         if (orderItem) {
             orderItem++;
         } else {
@@ -56,8 +66,12 @@ function renderCreatures(creature) {
             };  
         }
 
-    
+        cart.push(orderItem.quantity);
 
+
+        
+        console.log(orderItem);
+        console.log(cart);
 
     });
 
