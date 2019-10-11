@@ -4,7 +4,7 @@ import { foundById } from '../common/utilities.js';
 export const CART_KEY = 'CART_KEY';
 
 
-const initializeCart = () => {
+export const initializeCart = () => {
     const serializedOrder = JSON.stringify(cart);
     localStorage.setItem(CART_KEY, serializedOrder);
 };
@@ -51,7 +51,7 @@ function renderCreatures(creature) {
             currentLocalCart = initializeCart();
             currentLocalCart = localStorage.getItem(CART_KEY);
         } else {
-            currentLocalCart; /*= JSON.parse(currentLocalCart);*/
+            currentLocalCart;
         }
 
         let orderItem = foundById(cart, creature.id);

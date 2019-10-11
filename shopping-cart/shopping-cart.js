@@ -1,17 +1,18 @@
-// import cart from '../products/render-creatures.js';
 import creatures from '../data/creatures.js';
 import { foundById } from '../common/utilities.js';
 import renderTableRow from './render-table-row.js';
 import { calcOrderTotal } from '../common/utilities.js';
+import { initializeCart } from '../products/render-creatures.js';
+import { CART_KEY } from '../products/render-creatures.js';
+
+// if (CART_KEY === null) {
+//     initializeCart();
+// }
 
 const stupidVariable = localStorage.getItem('CART_KEY');
 const tbody = document.getElementById('table-body');
 
-
 let parsedCart = JSON.parse(stupidVariable);
-
-console.log(parsedCart, 'parsed cart');
-
 for (let i = 0; i < parsedCart.length; i++) {
     const orderItem = parsedCart[i];
     const creature = foundById(creatures, orderItem.id);
