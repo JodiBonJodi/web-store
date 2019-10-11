@@ -10,6 +10,8 @@ const tbody = document.getElementById('table-body');
 
 let parsedCart = JSON.parse(stupidVariable);
 
+console.log(parsedCart, 'parsed cart');
+
 for (let i = 0; i < parsedCart.length; i++) {
     const orderItem = parsedCart[i];
     const creature = foundById(creatures, orderItem.id);

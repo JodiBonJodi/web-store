@@ -71,17 +71,12 @@ img {
     text-align: center;
     padding: 10px;
     font-size: 40px;;
-    /* display: flex;
-    flex-direction: center;
-    justify-content: center;
-    align-items: center;
-    margin: auto; */
 }
 
 .featured {
     display: flex; 
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     padding: 0px;
 }
 
@@ -92,7 +87,10 @@ img {
     background-color: rgba(70, 105, 58, 0.5);
     border: 1px solid lightgrey;
     border-radius: 25px;
-    align-content: space-between;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-left: 70px;
+    margin-right: 70px;
 }
 
 .caption {
