@@ -50,25 +50,20 @@ function renderCreatures(creature) {
         if (!currentLocalCart) {
             currentLocalCart = initializeCart();
             currentLocalCart = localStorage.getItem(CART_KEY);
-        } else {
-            currentLocalCart;
-        }
+        } 
 
         let orderItem = foundById(cart, creature.id);
-
-        if (orderItem) {
-            orderItem.quantity++;
+        if (!orderItem) {
+            orderItem = {
+                id: button.value,
+                quantity: 1,
+            };  
+            cart.push(orderItem);
         } else {
-            if (orderItem === null) {
-                orderItem = {
-                    id: creature.id,
-                    quantity: 1,
-                };  
-                cart.push(orderItem);
-            }
-
+            orderItem.quantity++;
         }
-        let stringyCreature = JSON.stringify(cart);
+
+        const stringyCreature = JSON.stringify(cart);
         localStorage.setItem(CART_KEY, stringyCreature);
     });
 
