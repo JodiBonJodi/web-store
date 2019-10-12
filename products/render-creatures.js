@@ -5,11 +5,11 @@ export const CART_KEY = 'CART_KEY';
 
 
 export const initializeCart = () => {
-    const serializedOrder = JSON.stringify(cart);
+    const serializedOrder = JSON.stringify(emptyCart);
     localStorage.setItem(CART_KEY, serializedOrder);
 };
 
-let cart = [];
+const emptyCart = [];
 
 function renderCreatures(creature) {
     const li = document.createElement('li');
@@ -45,25 +45,28 @@ function renderCreatures(creature) {
     button.addEventListener('click', () => {
 
 
-        let currentLocalCart = localStorage.getItem(CART_KEY); 
+        let currentLocalCart = JSON.parse(localStorage.getItem(CART_KEY));
+
         
         if (!currentLocalCart) {
             currentLocalCart = initializeCart();
-            currentLocalCart = localStorage.getItem(CART_KEY);
+            currentLocalCart = JSON.parse(localStorage.getItem(CART_KEY));
         } 
 
-        let orderItem = foundById(cart, creature.id);
+        let orderItem = foundById(currentLocalCart, creature.id);
+        
         if (!orderItem) {
             orderItem = {
                 id: button.value,
                 quantity: 1,
             };  
-            cart.push(orderItem);
+            currentLocalCart.push(orderItem);
+
         } else {
             orderItem.quantity++;
         }
 
-        const stringyCreature = JSON.stringify(cart);
+        const stringyCreature = JSON.stringify(currentLocalCart);
         localStorage.setItem(CART_KEY, stringyCreature);
     });
 
