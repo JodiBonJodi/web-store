@@ -20,7 +20,7 @@ const unicorn = {
     id: 'Unicorn',
     name: 'The Last Unicorn',
     image: 'last-unicorn-square.jpg',
-    description: 'Looks like a horse, but also has a horn',
+    description: 'Looks like a horse, but also has a horn.',
     category: 'Beautiful endangered species',
     price: 30000,
 };

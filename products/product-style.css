@@ -112,3 +112,15 @@ button {
     text-align: center;
     font-family: 'Smythe', cursive;
 }
+
+button.buy-me:active {
+    border: lightgrey;
+    
+}
+
+button.buy-me:hover {
+    border: none;
+}
+button.buy-me:focus {
+    outline: 0;
+}

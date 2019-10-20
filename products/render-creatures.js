@@ -1,4 +1,15 @@
+import { foundById } from '../common/utilities.js';
+// import creatures from '../data/creatures.js';
 
+export const CART_KEY = 'CART_KEY';
+
+
+export const initializeCart = () => {
+    const serializedOrder = JSON.stringify(emptyCart);
+    localStorage.setItem(CART_KEY, serializedOrder);
+};
+
+const emptyCart = [];
 
 function renderCreatures(creature) {
     const li = document.createElement('li');
@@ -31,9 +42,36 @@ function renderCreatures(creature) {
     button.className = 'buy-me';
     button.textContent = 'Add';
     button.value = creature.id;
+    button.addEventListener('click', () => {
+
+
+        let currentLocalCart = JSON.parse(localStorage.getItem(CART_KEY));
+
+        
+        if (!currentLocalCart) {
+            currentLocalCart = initializeCart();
+            currentLocalCart = JSON.parse(localStorage.getItem(CART_KEY));
+        } 
+
+        let orderItem = foundById(currentLocalCart, creature.id);
+        
+        if (!orderItem) {
+            orderItem = {
+                id: button.value,
+                quantity: 1,
+            };  
+            currentLocalCart.push(orderItem);
+
+        } else {
+            orderItem.quantity++;
+        }
+
+        const stringyCreature = JSON.stringify(currentLocalCart);
+        localStorage.setItem(CART_KEY, stringyCreature);
+    });
 
     captionDiv.appendChild(button);
-
+    
     return li;
 }
 

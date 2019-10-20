@@ -1,6 +1,7 @@
 import makePrettyMoney from '../common/utilities.js';
 
-function renderTableRow(cart, creature) {
+
+function renderTableRow(lineItem, creature) {
    
     const tableRow = document.createElement('tr'); //makes row
         
@@ -10,7 +11,7 @@ function renderTableRow(cart, creature) {
     tableRow.appendChild(nameData);
 
     const quantityData = document.createElement('td');
-    quantityData.textContent = cart.quantity;
+    quantityData.textContent = lineItem.quantity;
     tableRow.appendChild(quantityData);
 
     const priceData = document.createElement('td');
@@ -18,7 +19,7 @@ function renderTableRow(cart, creature) {
     tableRow.appendChild(priceData);
 
     const totalData = document.createElement('td');
-    const total = cart.quantity * creature.price;
+    const total = lineItem.quantity * creature.price;
     totalData.textContent = makePrettyMoney(total);
     tableRow.appendChild(totalData);
 
