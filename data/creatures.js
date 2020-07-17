@@ -1,7 +1,7 @@
 const vampire = {
     id: 'Vampire',
     name: 'Louis de Pointe du Lac',
-    image: '/assets/louis-square.jpg',
+    image: 'louis-square.jpg',
     description: 'Will suck your blood for food and fun.',
     category: 'Creatures that will kill you',
     price: 1500,
@@ -10,7 +10,7 @@ const vampire = {
 const werewolf = {
     id: 'Werewolf',
     name: 'Remus Lupin',
-    image: '/assets/Remus-lupin-square.jpg',
+    image: 'Remus-lupin-square.jpg',
     description: 'Changes into a wolf on the full moon',
     category: 'Creatures that will kill you',
     price: 700,
@@ -19,7 +19,7 @@ const werewolf = {
 const unicorn = {
     id: 'Unicorn',
     name: 'The Last Unicorn',
-    image: '/assets/last-unicorn-square.jpg',
+    image: 'last-unicorn-square.jpg',
     description: 'Looks like a horse, but also has a horn.',
     category: 'Beautiful endangered species',
     price: 30000,
@@ -28,7 +28,7 @@ const unicorn = {
 const dwarf = {
     id: 'Dwarf',
     name: 'Gimli',
-    image: '/assets/gimli-square.jpeg',
+    image: 'gimli-square.jpeg',
     description: 'Works hard and has a great beard',
     category: 'Creatures that will build things',
     price: 5000,
@@ -37,7 +37,7 @@ const dwarf = {
 const ewok = {
     id: 'Ewok',
     name: 'Wicket W. Warrick',
-    image: '/assets/ewok-square.jpeg',
+    image: 'ewok-square.jpeg',
     description: 'Small and hairy',
     category: 'Lives in the forest and builds things with sticks and rope',
     price: 6000,
@@ -45,7 +45,7 @@ const ewok = {
 
 const sasquatch = {
     id: 'Sasquatch',
-    name: '/assets/Bigfoot',
+    name: 'Bigfoot',
     image: 'bigfoot-squarejpg.jpg',
     description: 'Large and hairy',
     category: 'Creatures that will can never find',

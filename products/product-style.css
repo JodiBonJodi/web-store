@@ -1,5 +1,5 @@
 body {
-    background-image: url("../../assets/darkmistybackground.jpg");
+    background-image: url("/assets/darkmistybackground.jpg");
     color: white;
     display: flex;
     align-items: center;
